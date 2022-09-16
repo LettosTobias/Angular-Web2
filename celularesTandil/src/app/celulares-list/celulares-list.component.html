@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Tipo</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{celular.marca}}</td>
+            <td>{{celular.tipo}}</td>
+            <td>{{celular.nombre}}</td>
+            <td>{{celular.precio}}</td>
+            <td>{{celular.stock}}</td>
+            <td> <img [src]= "celular.imagen" [alt]="celular.nombre" class="imagen-celu"/></td>
+        </tr>
+    </tbody>
+</table>
