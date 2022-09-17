@@ -9,12 +9,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor=" let celular of celulares" [ngClass]="{'clearance' : celular.clearance}">
+            
             <td>{{celular.marca}}</td>
             <td>{{celular.tipo}}</td>
             <td>{{celular.nombre}}</td>
-            <td>{{celular.precio}}</td>
-            <td>{{celular.stock}}</td>
+            <td>{{celular.precio |currency}}</td>
+            <td> <span *ngIf="celular.stock ==0">SIN STOCK</span><span *ngIf="celular.stock > 0">CON STOCK</span></td>
             <td> <img [src]= "celular.imagen" [alt]="celular.nombre" class="imagen-celu"/></td>
         </tr>
     </tbody>
