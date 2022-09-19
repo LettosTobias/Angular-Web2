@@ -1,22 +1,45 @@
-<table class="table">
+<table class="table text-center">
     <thead>
         <tr>
+            <th>Producto</th>
             <th>Marca</th>
             <th>Tipo</th>
-            <th>Nombre</th>
+            <th>Modelo</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Cantidad</th>
+            
         </tr>
     </thead>
     <tbody>
         <tr *ngFor=" let celular of celulares" [ngClass]="{'clearance' : celular.clearance}">
             
+            <td> <img [src]= "celular.imagen" [alt]="celular.nombre" class="imagen-celu"/></td>
             <td>{{celular.marca}}</td>
             <td>{{celular.tipo}}</td>
             <td>{{celular.nombre}}</td>
             <td>{{celular.precio |currency}}</td>
-            <td> <span *ngIf="celular.stock ==0">SIN STOCK</span><span *ngIf="celular.stock > 0">CON STOCK</span></td>
-            <td> <img [src]= "celular.imagen" [alt]="celular.nombre" class="imagen-celu"/></td>
+            <td> <span *ngIf="celular.stock == 0">SIN STOCK</span><span *ngIf="celular.stock > 0">CON STOCK</span></td>
+            <td>
+                
+                    <div class="inputCantidad">
+                        <div class="input-group-prepend">
+                            <button  type="button"  (click)="downCantidad(celular)"> -- </button>
+                        </div>
+                                <input 
+                                class="input-group"
+                                class="input" 
+                                type="text" 
+                                [(ngModel)]="celular.cantidad"
+                                (keyup)="ChangeQuantity($event , celular)">
+                        <div>
+                            <button  type="button" class="button2"  (click)="upCantidad(celular)">+</button>
+                        </div>
+                    </div>
+               
+     
+            </td>
         </tr>
     </tbody>
 </table>
+

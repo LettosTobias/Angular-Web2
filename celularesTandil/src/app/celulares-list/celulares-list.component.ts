@@ -17,6 +17,7 @@ export class CelularesListComponent implements OnInit {
         stock : 13 ,
         imagen : "./assets/img/samsungs21.jpg" ,
         clearance : false,
+        cantidad : 0 ,
     } ,
     {
         marca : "iphone",
@@ -26,6 +27,7 @@ export class CelularesListComponent implements OnInit {
         stock : 0 ,
         imagen : "./assets/img/samsungs21.jpg" ,
         clearance : true,
+        cantidad : 0 ,
     }
   
   ]
@@ -34,4 +36,17 @@ export class CelularesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  upCantidad (celulares :Celular) : void {
+      if(celulares.cantidad < celulares.stock)
+        celulares.cantidad++;
+  }
+  downCantidad (celulares :Celular) : void { 
+    if(celulares.cantidad > 0)
+      celulares.cantidad--;
+  }
+  ChangeQuantity(event: any , celulares: Celular ){
+    
+
+  }
+  
 }

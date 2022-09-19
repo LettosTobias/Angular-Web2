@@ -5,5 +5,6 @@ export interface Celular{
     precio : number, 
     stock : number ,
     imagen : string ,
-    clearance:boolean,
+    clearance : boolean,
+    cantidad : number,
 }
