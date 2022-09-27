@@ -36,17 +36,9 @@ export class CelularesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  upCantidad (celulares :Celular) : void {
-      if(celulares.cantidad < celulares.stock)
-        celulares.cantidad++;
-  }
-  downCantidad (celulares :Celular) : void { 
-    if(celulares.cantidad > 0)
-      celulares.cantidad--;
-  }
-  ChangeQuantity(event: any , celulares: Celular ){
-    
+ maxReached(m:number){
 
-  }
+
+ }
   
 }

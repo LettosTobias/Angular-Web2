@@ -20,23 +20,9 @@
             <td>{{celular.nombre}}</td>
             <td>{{celular.precio |currency}}</td>
             <td> <span *ngIf="celular.stock == 0">SIN STOCK</span><span *ngIf="celular.stock > 0">CON STOCK</span></td>
-            <td>
+            <td>      
                 
-                    <div class="inputCantidad">
-                        <div class="input-group-prepend">
-                            <button  type="button"  (click)="downCantidad(celular)"> -- </button>
-                        </div>
-                                <input 
-                                class="input-group"
-                                class="input" 
-                                type="text" 
-                                [(ngModel)]="celular.cantidad"
-                                (keyup)="ChangeQuantity($event , celular)">
-                        <div>
-                            <button  type="button" class="button2"  (click)="upCantidad(celular)">+</button>
-                        </div>
-                    </div>
-               
+                <app-input-number [(cantidad)]="celular.cantidad"  [max]="celular.stock"  (maxReached)="maxReached($event)"></app-input-number>
      
             </td>
         </tr>

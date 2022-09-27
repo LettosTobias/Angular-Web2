@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CelularesTandilAboutComponent } from './celulares-tandil-about/celulares-tandil-about.component';
 import { CelularesTandilCelularesComponent } from './celulares-tandil-celulares/celulares-tandil-celulares.component';
 import { CarritoCelularesTandilComponent } from './carrito-celulares-tandil/carrito-celulares-tandil.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CarritoCelularesTandilComponent } from './carrito-celulares-tandil/carr
     CelularesListComponent,
     CelularesTandilAboutComponent,
     CelularesTandilCelularesComponent,
-    CarritoCelularesTandilComponent
+    CarritoCelularesTandilComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,
