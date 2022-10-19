@@ -9,6 +9,7 @@ import { Celular } from '../celulares-list/Celular';
 })
 export class InputNumberComponent implements OnInit {
 
+  
   constructor() { }
   @Input()
   cantidad!: number;
@@ -17,8 +18,8 @@ export class InputNumberComponent implements OnInit {
 
   @Output()
   cantidadChange: EventEmitter<number> = new EventEmitter<number>();
-  @Output()
-  maxReached: EventEmitter<number> = new EventEmitter<number>();
+  // @Output()
+  // maxReached: EventEmitter<number> = new EventEmitter<number>();
 
   ngOnInit(): void {
   }
@@ -28,8 +29,8 @@ export class InputNumberComponent implements OnInit {
       this.cantidad++;
       this.cantidadChange.emit(this.cantidad);
     }
-    else
-    this.maxReached.emit(this.max) ;
+    // else
+    // this.maxReached.emit(this.max) ;
   }
   downCantidad () : void { 
     if(this.cantidad > 0){
@@ -37,7 +38,8 @@ export class InputNumberComponent implements OnInit {
       this.cantidadChange.emit(this.cantidad);
     }
   }
-  ChangeQuantity(event: any ){
+  ChangeQuantity(event:KeyboardEvent ):void{
+    console.log(event.target);
     this.cantidadChange.emit(this.cantidad);
 
   }

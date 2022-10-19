@@ -8,6 +8,7 @@
             <th>Precio</th>
             <th>Stock</th>
             <th>Cantidad</th>
+            <th>Compra</th>
             
         </tr>
     </thead>
@@ -19,12 +20,14 @@
             <td>{{celular.tipo}}</td>
             <td>{{celular.nombre}}</td>
             <td>{{celular.precio |currency}}</td>
-            <td> <span *ngIf="celular.stock == 0">SIN STOCK</span><span *ngIf="celular.stock > 0">CON STOCK</span></td>
+            <td> <span class="badge text-bg-warning" *ngIf="celular.stock == 0">SIN STOCK</span><span *ngIf="celular.stock > 0">CON STOCK</span></td>
             <td>      
                 
-                <app-input-number [(cantidad)]="celular.cantidad"  [max]="celular.stock"  (maxReached)="maxReached($event)"></app-input-number>
-     
+                <app-input-number [(cantidad)]="celular.cantidad"  [max]="celular.stock"></app-input-number>
+                <span *ngIf="celular.stock > 0"> MAX: {{celular.stock}}</span>
+                
             </td>
+            <td><button class="btn btn-primary" (click)="addToCart(celular)">Comprar</button></td> 
         </tr>
     </tbody>
 </table>
